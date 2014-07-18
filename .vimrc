@@ -79,7 +79,7 @@ set wrap
 set linebreak
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
-" & Set indent to 4 spaces
+" & Set indent to 2 spaces
 set expandtab
 set tabstop=2
 set sw=2
@@ -88,6 +88,7 @@ set smarttab
 
 " Map 'jk' to escape
 imap jk <esc>
+
 
 " Allow for pasting multiple lines
 xnoremap p pgvy

@@ -13,15 +13,6 @@ set history=1000
 " Set leader to the spacebar
 let mapleader = "\<Space>"
 
-" Making it so ; works like : for commands. Saves typing and
-" eliminates :W style typos due to lazy holding shift.
-nnoremap ; :
-
-"Stupid lazy-shift holding errors
-cmap W w
-cmap WQ wq
-cmap wQ wq
-cmap Q q
 
 "Set spell check for text files
 autocmd FileType gitcommit,mail,mkd,text set spell
@@ -33,6 +24,8 @@ set backupskip=/tmp/*,/private/tmp/*
 "it doesn't close the buffer when you close the window --needed for :Cdo
 set hidden
 
+"Makes it so powerline shows up upon opening vim
+set laststatus=2
 "###################################
 "Environment
 "###################################
@@ -43,27 +36,12 @@ set showmode
 set cursorline
 "Show column and line number at bottom right
 set ruler
-"Relative line numbers
-set rnu 
-
-"ctrl+h toggles relative line numbers on and off
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set number
-  else
-    set nonumber
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <C-h> :call NumberToggle()<cr>
 
 "Set colorscheme
 set background=dark
 colorscheme solarized
 " Set font and size
-set guifont=Menlo:h15
+set guifont=Menlo:h13
 " Highlight the last searched pattern:
 set hlsearch
 " Show matching brackets and parentheses
@@ -99,17 +77,12 @@ set autoindent
 set wrap
 " Break lines on words
 set linebreak
-" Make j,k,0,and $ behave the same way with wrapped lines
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 " & Set indent to 4 spaces
 set expandtab
-set tabstop=4
-set sw=4
+set tabstop=2
+set sw=2
 set expandtab
 set smarttab
 
@@ -169,15 +142,22 @@ map <Leader>j i<CR><Esc>
 inoremap \fn <C-R>=expand("%:t")<CR>
 inoremap \fp <C-R>=expand("%:p:h")<CR>
 
+"###################################
+"setting buffers
+"###################################
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
 
 "###################################
 "Plugins
 "###################################
 "Nerd tree
 map \ :NERDTreeToggle<CR>
-
-"Double tap space to comment
-map <leader><leader> <plug>NERDCommenterToggle
 
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
@@ -188,5 +168,3 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 if filereadable($HOME . "/.vimrc_local")
   source ~/.vimrc.local
 endif
-
-

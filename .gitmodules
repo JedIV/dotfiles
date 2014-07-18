@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-cdo"]
 	path = vim/bundle/vim-cdo
 	url = https://github.com/Peeja/vim-cdo.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git://github.com/bling/vim-airline

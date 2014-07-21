@@ -1,4 +1,7 @@
 export EDITOR="vim"
+
+export PATH=/usr/local/bin:$PATH
+
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"

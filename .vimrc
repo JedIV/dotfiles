@@ -36,12 +36,14 @@ set showmode
 set cursorline
 "Show column and line number at bottom right
 set ruler
+"Show the line numbers on the side
+set number
 
 "Set colorscheme
 set background=dark
 colorscheme solarized
 " Set font and size
-set guifont=Menlo:h13
+set guifont=Menlo:h14
 " Highlight the last searched pattern:
 set hlsearch
 " Show matching brackets and parentheses
@@ -159,6 +161,9 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 "###################################
 "Nerd tree
 map \ :NERDTreeToggle<CR>
+
+"Double tap space to comment
+map <leader><leader> <plug>NERDCommenterToggle
 
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"

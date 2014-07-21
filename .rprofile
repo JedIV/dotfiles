@@ -14,11 +14,19 @@ if (file.exists("~/.rprofile.local")){
   options(device = "quartz")
 
 }
-library(utils)
-if (!("colorout" %in% rownames(installed.packages()))){
-  download.file("http://www.lepem.ufc.br/jaa/colorout_1.0-3.tar.gz", destfile = "colorout_1.0-3.tar.gz")
-  install.packages("colorout_1.0-3.tar.gz", type = "source", repos = NULL)
-}
+
+# library(utils)
+# if (!("colorout" %in% rownames(installed.packages()))){
+#   download.file("http://www.lepem.ufc.br/jaa/colorout_1.0-3.tar.gz", destfile = "colorout_1.0-3.tar.gz")
+#   install.packages("colorout_1.0-3.tar.gz", type = "source", repos = NULL)
+# }
+# 
+# if (!all((packs %in% rownames(installed.packages())))){
+#   install.packages(packs,dep = T)
+# }
+# 
+# rm(packs)
+
 library(colorout)
 
 .Last <- function() {

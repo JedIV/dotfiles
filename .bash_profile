@@ -32,3 +32,10 @@ export R_HISTFILE=~/.Rhistory
 
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

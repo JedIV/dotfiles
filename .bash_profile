@@ -1,4 +1,4 @@
-export EDITOR="vim"
+export EDITOR="emacs"
 
 export PATH=/usr/local/bin:$PATH
 

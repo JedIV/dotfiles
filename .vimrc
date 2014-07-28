@@ -31,7 +31,7 @@ set laststatus=2
 "###################################
 
 "Show the mode
-set showmode
+set noshowmode
 "Highlight the cursor line 
 set cursorline
 "Show column and line number at bottom right
@@ -168,6 +168,25 @@ map <leader><leader> <plug>NERDCommenterToggle
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
 
+
+"Lightline
+let g:lightline = {
+      \ 'colorscheme': 'solarized_dark',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 "###################################
 "Source local .vimrc
 "###################################

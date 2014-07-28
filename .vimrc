@@ -76,9 +76,9 @@ nnoremap <Leader>f `.
 " Copy indent from current line when starting a new line 
 set autoindent
 " wrap long lines
-set wrap
-" Break lines on words
-set linebreak
+"set wrap
+"" Break lines on words
+"set linebreak
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 " & Set indent to 2 spaces

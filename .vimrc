@@ -76,7 +76,7 @@ nnoremap <Leader>f `.
 " Copy indent from current line when starting a new line 
 set autoindent
 " wrap long lines
-"set wrap
+set nowrap
 "" Break lines on words
 "set linebreak
 

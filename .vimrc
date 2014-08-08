@@ -13,6 +13,8 @@ set history=1000
 " Set leader to the spacebar
 let mapleader = "\<Space>"
 
+" Turn off quotation autocomplete
+let b:delimitMate_autoclose = 0
 
 "Set spell check for text files
 autocmd FileType gitcommit,mail,mkd,text set spell

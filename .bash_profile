@@ -1,6 +1,6 @@
 export EDITOR="vim"
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:$PATH
 
 alias gs="git status"
 alias ga="git add"
@@ -39,3 +39,4 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s "$HOME/.ec2/profile" ]] && source "$HOME/.ec2/profile" # Load EC2 API tools

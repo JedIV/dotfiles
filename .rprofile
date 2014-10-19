@@ -1,5 +1,4 @@
 options(prompt="❥ ", digits=4, show.signif.stars=FALSE)
-options("width"=160)
 
 r <- getOption("repos")             # hard code the US repo for CRAN
 r["CRAN"] <- "http://cran.us.r-project.org"

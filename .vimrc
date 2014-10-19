@@ -195,3 +195,6 @@ let g:lightline = {
 if filereadable($HOME . "/.vimrc_local")
   source ~/.vimrc.local
 endif
+
+
+:let g:notes_directories = ['~/masters_thesis/notes']

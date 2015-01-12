@@ -1,4 +1,4 @@
-" Michael's Vim Profile
+" Jed's Vim Profile
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 
 " Run pathogen
@@ -198,3 +198,10 @@ endif
 
 
 :let g:notes_directories = ['~/masters_thesis/notes']
+augroup RubyTests
+au!
+  autocmd BufRead,BufNewFile *_test.rb,test_*.rb,*_spec.rb
+      \ :nmap gt V:<C-U>!$HOME/.vim/bin/ruby-run-focused-unit-test
+      \ % <C-R>=line("'<")<CR>p <CR>|
+      \ :nmap gT :<C-U>!ruby %<CR>
+augroup END

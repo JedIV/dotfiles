@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+def output_and_run_command(command)
+  puts   command
+  system command
+  exit
+end
+
+filename    = ARGV[0]
+line_number = ARGV[1].to_i
+lines       = File.read(filename).split(/\n/)
+
+(line_number - 1).downto(0) do |i|
+  if lines[i] =~ /\s*it "(.*)"/ || lines[i] =~ /\s*it '(.*)'/
+    output_and_run_command(
+      %{./bin/rspec #{filename}:#{line_number}}
+    )
+  elsif lines[i] =~ /\s*def (test\S*)/
+    output_and_run_command(
+      %{ruby -I"lib:test" "#{filename}" -n "#{$1}"}
+    )
+  elsif lines[i] =~ /\s*test "(.*)"/
+    output_and_run_command(
+      %{ruby -I"lib:test" "#{filename}" -n "#{"test_"+$1.gsub(" ", "_")}"}
+    )
+  end
+end

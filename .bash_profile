@@ -12,6 +12,7 @@ alias v="mvim"
 alias be="bundle exec"
 alias r="r --no-save"
 alias R="r --no-save"
+alias testit="bundle exec rake test"
 
 cd() { builtin cd "$@"; ls; }
 

@@ -15,6 +15,8 @@ alias be="bundle exec"
 alias r="r --no-save"
 alias R="r --no-save"
 alias testit="bundle exec rake test"
+alias news="cd ~/capture_repos/capture-news/"
+alias ka="~/exa/target/exa"
 
 cd() { builtin cd "$@"; ls; }
 
@@ -22,6 +24,11 @@ export HISTCONTROL=erasedups  # Removes duplicate entires
 export HISTSIZE=10000  # Increase command history
 shopt -s histappend  # Ensures all history is saved
 PROMPT_COMMAND='history -a' #Record history at every command
+
+
+#Bash Completion for git
+test -f ~/.git-completion.bash && . $_
+
 
 set completion-ignore-case on
 

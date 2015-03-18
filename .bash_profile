@@ -16,6 +16,7 @@ alias r="r --no-save"
 alias R="r --no-save"
 alias testit="bundle exec rake test"
 alias news="cd ~/capture_repos/capture-news/"
+alias places="cd ~/capture_repos/capture-places/"
 alias ka="~/exa/target/exa"
 
 cd() { builtin cd "$@"; ls; }

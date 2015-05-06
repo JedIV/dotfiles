@@ -28,6 +28,12 @@ set hidden
 
 "Makes it so powerline shows up upon opening vim
 set laststatus=2
+
+"Turn on syntax
+syntax on
+
+"Allow copy paste across windows
+set clipboard=unnamed
 "###################################
 "Environment
 "###################################

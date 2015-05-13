@@ -20,32 +20,32 @@ save_packs <- function(){
   write.csv(dimnames(installed.packages())[[1]], "~/.rpackages")
 }
 
-reload_list <- function(){
-  load_packs(read.csv("~/.rpackages", row.names = 1)$x)
-}
+# reload_list <- function(){
+#   load_packs(read.csv("~/.rpackages", row.names = 1)$x)
+# }
+# 
+# load_packs <- function(packages){
+#   for(package in packages){
+#     if( package %in% available.packages()[,1] ){
+#       if( ! package %in% installed.packages()[,1] ){
+#         install.packages(package)
+#         print(paste(package, "installed"))
+#       }
+#       library(package, character = TRUE)
+#         print(paste(package, "loaded"))
+#     } else {
+#       print(paste( "package" ,package, "not found" ))
+#     }
+#   }
+#   save_packs()
+# }
 
-load_packs <- function(packages){
-  for(package in packages){
-    if( package %in% available.packages()[,1] ){
-      if( ! package %in% installed.packages()[,1] ){
-        install.packages(package)
-        print(paste(package, "installed"))
-      }
-      library(package, character = TRUE)
-        print(paste(package, "loaded"))
-    } else {
-      print(paste( "package" ,package, "not found" ))
-    }
-  }
-  save_packs()
-}
+# load_packs("utils")
+# if (!("colorout" %in% rownames(installed.packages()))){
+#   devtools::install_github("jalvesaq/colorout") 
+# }
 
-load_packs("utils")
-if (!("colorout" %in% rownames(installed.packages()))){
-  devtools::install_github("jalvesaq/colorout") 
-}
-
-library(colorout)
+# library(colorout)
 
 .Last <- function() {
   if (!any(commandArgs()=='--no-readline') && interactive()){

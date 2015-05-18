@@ -56,8 +56,6 @@ set guifont=Menlo:h14
 set hlsearch
 " Show matching brackets and parentheses
 set showmatch 
-" Highlight search terms
-set hlsearch
 " Ignore case in search
 set ignorecase
 " find as you type search
@@ -94,7 +92,6 @@ set expandtab
 set tabstop=2
 set sw=2
 set expandtab
-set smarttab
 
 " Map 'jk' to escape
 imap jk <esc>

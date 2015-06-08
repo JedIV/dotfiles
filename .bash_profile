@@ -26,6 +26,8 @@ export HISTSIZE=10000  # Increase command history
 shopt -s histappend  # Ensures all history is saved
 PROMPT_COMMAND='history -a' #Record history at every command
 
+# set color for howdoi
+set HOWDOI_COLORIZE on
 
 #Bash Completion for git
 test -f ~/.git-completion.bash && . $_
@@ -48,6 +50,7 @@ export R_HISTFILE=~/.Rhistory
 export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.ec2/profile" ]] && source "$HOME/.ec2/profile" # Load EC2 API tools

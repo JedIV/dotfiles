@@ -91,7 +91,7 @@ set nowrap
 set expandtab
 set tabstop=2
 set sw=2
-set expandtab
+set smarttab
 
 " Map 'jk' to escape
 imap jk <esc>

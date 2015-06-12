@@ -34,6 +34,9 @@ syntax on
 
 "Allow copy paste across windows
 set clipboard=unnamed
+
+"All backspacing over delete, over white space etc.
+set backspace=indent,eol,start
 "###################################
 "Environment
 "###################################

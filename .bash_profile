@@ -56,7 +56,7 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 [[ -s "$HOME/.ec2/profile" ]] && source "$HOME/.ec2/profile" # Load EC2 API tools
 
 # colored man pages
-man( {
+man() {
   env LESS_TERMCAP_mb=$'\E[01;31m' \
   LESS_TERMCAP_md=$'\E[01;38;5;74m' \
   LESS_TERMCAP_me=$'\E[0m' \
@@ -65,4 +65,7 @@ man( {
   LESS_TERMCAP_ue=$'\E[0m' \
   LESS_TERMCAP_us=$'\E[04;38;5;146m' \
   man "$@"
-})
+}
+
+# sourcing plugins for bash
+source ~/dotfiles/.plugins/.extract

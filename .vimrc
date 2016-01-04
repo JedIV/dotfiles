@@ -1,5 +1,5 @@
 " Jed's Vim Profile
-source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+source ~/dotfiles/vim/autoload/pathogen.vim
 
 " Run pathogen
 execute pathogen#infect()
@@ -51,6 +51,7 @@ set ruler
 set number
 
 "Set colorscheme
+syntax enable
 set background=dark
 colorscheme solarized
 " Set font and size

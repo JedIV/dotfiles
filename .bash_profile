@@ -69,3 +69,6 @@ man() {
 
 # sourcing plugins for bash
 source ~/dotfiles/.plugins/.extract
+
+# load rbenv on load of shell
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
